@@ -1,0 +1,17 @@
+-- File: ada_language_guide.gpr
+project Ada_Language_Guide is
+   -- All source files are in the root directory
+   for Source_Dirs use (\".\");
+
+   -- Object files will be placed in the 'obj' directory
+   for Object_Dir use \"obj\";
+
+   -- Executables will be placed in the 'bin' directory
+   for Exec_Dir use \"bin\";
+
+   -- Enable warnings for all Ada files
+   for Compiler_Switches (\"Ada\") use (\"-gnatw\");
+
+   -- Automatically build all .adb files as executables
+   -- (No need to specify Main; GPR will build all files)
+end Ada_Language_Guide;
