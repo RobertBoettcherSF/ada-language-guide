@@ -6,7 +6,7 @@ procedure Generic_Swap is
    generic
       type T is private;  -- T can be any type
    procedure Swap(X, Y: in out T);
-   
+
    -- Implementation of Swap
    procedure Swap(X, Y: in out T) is
       Temp: T := X;
@@ -14,10 +14,10 @@ procedure Generic_Swap is
       X := Y;
       Y := Temp;
    end Swap;
-   
+
    -- Instantiate Swap for Integer
-   procedure Swap_Int is new Swap(T => Integer);
-   
+   procedure Swap_Int is new Swap(T => Integer);  -- <-- Fix: Use "=>", not ","
+
    A, B: Integer := 5, 10;
 begin
    Put_Line("Before swap: A = " & Integer'Image(A) & ", B = " & Integer'Image(B));
