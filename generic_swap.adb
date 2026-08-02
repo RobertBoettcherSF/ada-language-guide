@@ -15,8 +15,8 @@ procedure Generic_Swap is
       Y := Temp;
    end Swap;
 
-   -- Instantiate Swap for Integer
-   procedure Swap_Int is new Swap(T => Integer);  -- <-- Fix: Use "=>", not ","
+   -- Instantiate Swap for Integer (FIX: Use "=>", NOT ",")
+   procedure Swap_Int is new Swap(T => Integer);  -- <-- HERE: Use "=>"
 
    A, B: Integer := 5, 10;
 begin
