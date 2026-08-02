@@ -15,10 +15,12 @@ procedure Generic_Swap is
       Y := Temp;
    end Swap;
 
-   -- Instantiate Swap for Integer (FIX: Use "=>", NOT ",")
-   procedure Swap_Int is new Swap(T => Integer);  -- <-- HERE: Use "=>"
+   -- Instantiate Swap for Integer
+   procedure Swap_Int is new Swap(T => Integer);
 
-   A, B: Integer := 5, 10;
+   -- FIX: Declare and initialize A and B separately
+   A: Integer := 5;
+   B: Integer := 10;
 begin
    Put_Line("Before swap: A = " & Integer'Image(A) & ", B = " & Integer'Image(B));
    Swap_Int(A, B);
